@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Teddy McDermott — Data Science Notebooks"
+  description: "A collection of data analysis and data science projects"
+  site-url: "https://notebooks.teddymcdermott.co.uk"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Portfolio"
+      - href: about.qmd
+        text: "About"
+    right:
+      - icon: github
+        href: https://github.com/yourusername
+      - icon: linkedin
+        href: https://linkedin.com/in/yourprofile
+
+format:
+  html:
+    theme: cosmo          # try flatly, litera, or minty for other looks
+    css: styles.css
+    toc: true
+    code-fold: true       # code hidden by default per notebook
+    code-tools: true      # adds "show all code" toggle at top of page
+    code-summary: "Show code"
+    fig-cap-location: bottom
+    grid:
+      body-width: 900px
+
+execute:
+  freeze: auto            # cache execution; re-render only if notebook changes

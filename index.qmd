@@ -1,0 +1,18 @@
+---
+title: "Data Science Portfolio"
+listing:
+  contents: notebooks        # folder where your .ipynb files live
+  type: grid                 # try "table" or "default" for other layouts
+  sort: "date desc"
+  categories: true            # clickable tag filter, pulled from each notebook's front matter
+  feed: true
+  fields: [image, title, description, date, categories, reading-time]
+  image-height: "200px"
+page-layout: full
+title-block-banner: false
+---
+
+Welcome — this is a collection of data analysis and data science projects,
+built as Jupyter notebooks and published straight from the source code.
+Click any project below to see the full analysis, including code, charts,
+and conclusions.
