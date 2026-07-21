@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://notebooks.teddymcdermott.co.uk/index.html</loc>
+    <lastmod>2026-07-21T23:36:25.149Z</lastmod>
+  </url>
+  <url>
     <loc>https://notebooks.teddymcdermott.co.uk/notebooks/Jupyter playtest.html</loc>
-    <lastmod>2026-07-21T23:34:28.618Z</lastmod>
+    <lastmod>2026-07-21T23:36:25.149Z</lastmod>
   </url>
   <url>
     <loc>https://notebooks.teddymcdermott.co.uk/about.html</loc>
-    <lastmod>2026-07-21T23:34:28.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://notebooks.teddymcdermott.co.uk/index.html</loc>
-    <lastmod>2026-07-21T23:34:28.618Z</lastmod>
+    <lastmod>2026-07-21T23:36:25.149Z</lastmod>
   </url>
 </urlset>

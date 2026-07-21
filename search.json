@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Science Portfolio",
+    "section": "",
+    "text": "Welcome — this is a collection of data analysis and data science projects, built as Jupyter notebooks and published straight from the source code. Click any project below to see the full analysis, including code, charts, and conclusions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy Notebook about a thing\n\n1 min\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "notebooks/Jupyter playtest.html",
     "href": "notebooks/Jupyter playtest.html",
     "title": "My Notebook about a thing",
@@ -12,12 +19,5 @@
     "title": "About",
     "section": "",
     "text": "About this site"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Science Portfolio",
-    "section": "",
-    "text": "Welcome — this is a collection of data analysis and data science projects, built as Jupyter notebooks and published straight from the source code. Click any project below to see the full analysis, including code, charts, and conclusions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy Notebook about a thing\n\n1 min\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

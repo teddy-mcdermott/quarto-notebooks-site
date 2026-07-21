@@ -10,7 +10,7 @@
 <atom:link href="https://notebooks.teddymcdermott.co.uk/index.xml" rel="self" type="application/rss+xml"/>
 <description>A collection of data analysis and data science projects</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Tue, 21 Jul 2026 23:34:31 GMT</lastBuildDate>
+<lastBuildDate>Tue, 21 Jul 2026 23:36:57 GMT</lastBuildDate>
 <item>
   <title>My Notebook about a thing</title>
   <link>https://notebooks.teddymcdermott.co.uk/notebooks/Jupyter playtest.html</link>
@@ -187,7 +187,7 @@ font-style: inherit;">in</span> xs]</span>
 
  ]]></description>
   <guid>https://notebooks.teddymcdermott.co.uk/notebooks/Jupyter playtest.html</guid>
-  <pubDate>Tue, 21 Jul 2026 23:34:31 GMT</pubDate>
+  <pubDate>Tue, 21 Jul 2026 23:36:57 GMT</pubDate>
 </item>
 </channel>
 </rss>
