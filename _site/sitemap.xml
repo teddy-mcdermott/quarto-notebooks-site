@@ -2,14 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://notebooks.teddymcdermott.co.uk/notebooks/Jupyter playtest.html</loc>
-    <lastmod>2026-07-21T23:34:28.618Z</lastmod>
+    <lastmod>2026-07-21T23:56:31.698Z</lastmod>
   </url>
   <url>
     <loc>https://notebooks.teddymcdermott.co.uk/about.html</loc>
-    <lastmod>2026-07-21T23:34:28.618Z</lastmod>
+    <lastmod>2026-07-21T23:54:42.705Z</lastmod>
   </url>
   <url>
     <loc>https://notebooks.teddymcdermott.co.uk/index.html</loc>
-    <lastmod>2026-07-21T23:34:28.618Z</lastmod>
+    <lastmod>2026-07-21T23:54:42.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://notebooks.yourdomain.com/index.html</loc>
+    <lastmod>2026-07-21T23:54:42.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://notebooks.yourdomain.com/notebooks/Jupyter playtest.html</loc>
+    <lastmod>2026-07-21T23:56:31.698Z</lastmod>
   </url>
 </urlset>

@@ -3,9 +3,9 @@ project:
   output-dir: _site
 
 website:
-  title: "Teddy McDermott — Data Science Notebooks"
+  title: "Your Name — Data Science Notebooks"
   description: "A collection of data analysis and data science projects"
-  site-url: "https://notebooks.teddymcdermott.co.uk"
+  site-url: "https://notebooks.yourdomain.com"
   navbar:
     left:
       - href: index.qmd
@@ -14,13 +14,15 @@ website:
         text: "About"
     right:
       - icon: github
-        href: https://github.com/yourusername
+        href: https://github.com/teddy-mcdermott
       - icon: linkedin
-        href: https://linkedin.com/in/yourprofile
+        href: https://www.linkedin.com/in/teddy-mcdermott-5756bb257/
 
 format:
   html:
-    theme: cosmo          # try flatly, litera, or minty for other looks
+    theme:
+      light: cosmo        # try flatly, litera, or minty for other light looks
+      dark: darkly        # try cyborg, slate, or solar for other dark looks
     css: styles.css
     toc: true
     code-fold: true       # code hidden by default per notebook

@@ -1,1 +1,1 @@
-Sitemap: https://notebooks.teddymcdermott.co.uk/sitemap.xml
+Sitemap: https://notebooks.yourdomain.com/sitemap.xml
