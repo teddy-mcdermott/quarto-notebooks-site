@@ -5,12 +5,12 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Your Name — Data Science Notebooks</title>
+<title>Teddy McDermott — Data Science Notebooks</title>
 <link>https://notebooks.yourdomain.com/</link>
 <atom:link href="https://notebooks.yourdomain.com/index.xml" rel="self" type="application/rss+xml"/>
-<description>A collection of data analysis and data science projects</description>
+<description>A collection of data analysis and data science projects.</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Wed, 22 Jul 2026 13:44:18 GMT</lastBuildDate>
+<lastBuildDate>Wed, 22 Jul 2026 13:47:12 GMT</lastBuildDate>
 <item>
   <title>Test Frontmatter</title>
   <link>https://notebooks.yourdomain.com/notebooks/Plotly_test.html</link>
@@ -232,7 +232,7 @@ if (outputEl) {{
 
  ]]></description>
   <guid>https://notebooks.yourdomain.com/notebooks/Plotly_test.html</guid>
-  <pubDate>Wed, 22 Jul 2026 13:44:18 GMT</pubDate>
+  <pubDate>Wed, 22 Jul 2026 13:47:12 GMT</pubDate>
 </item>
 <item>
   <title>My Notebook about a thing</title>
@@ -411,7 +411,7 @@ font-style: inherit;">in</span> xs]</span>
 
  ]]></description>
   <guid>https://notebooks.yourdomain.com/notebooks/Jupyter playtest.html</guid>
-  <pubDate>Wed, 22 Jul 2026 13:44:18 GMT</pubDate>
+  <pubDate>Wed, 22 Jul 2026 13:47:12 GMT</pubDate>
 </item>
 </channel>
 </rss>
