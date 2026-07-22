@@ -6,3 +6,4 @@ plotly
 nbformat
 pyyaml
 ipykernel
+xlrd
