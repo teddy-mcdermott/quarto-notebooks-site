@@ -2,5 +2,5 @@
 **/*.quarto_ipynb
 /venv/
 
-/notebooks/data
+
 /notebooks/old_versions
