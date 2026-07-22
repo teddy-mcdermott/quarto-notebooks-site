@@ -7,18 +7,25 @@
     "text": "Welcome — this is a collection of data analysis and data science projects, built as Jupyter notebooks and published straight from the source code. Click any project below to see the full analysis, including code, charts, and conclusions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest Frontmatter\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nThe state of Young Adult (18 - 24) Unemployment in the UK\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nMy Notebook about a thing\n\n1 min\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "notebooks/Jupyter playtest.html",
+    "href": "notebooks/Jupyter playtest.html",
+    "title": "My Notebook about a thing",
+    "section": "",
+    "text": "Here I’ll explain some stuff. I might even use Maths:\n\\(x \\times x = x^2\\)\n\n\nShow code\nfor i in range(50):\n    print(f\"{i} x {i} = {i**2}\")\n\n\n0 x 0 = 0\n1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n13 x 13 = 169\n14 x 14 = 196\n15 x 15 = 225\n16 x 16 = 256\n17 x 17 = 289\n18 x 18 = 324\n19 x 19 = 361\n20 x 20 = 400\n21 x 21 = 441\n22 x 22 = 484\n23 x 23 = 529\n24 x 24 = 576\n25 x 25 = 625\n26 x 26 = 676\n27 x 27 = 729\n28 x 28 = 784\n29 x 29 = 841\n30 x 30 = 900\n31 x 31 = 961\n32 x 32 = 1024\n33 x 33 = 1089\n34 x 34 = 1156\n35 x 35 = 1225\n36 x 36 = 1296\n37 x 37 = 1369\n38 x 38 = 1444\n39 x 39 = 1521\n40 x 40 = 1600\n41 x 41 = 1681\n42 x 42 = 1764\n43 x 43 = 1849\n44 x 44 = 1936\n45 x 45 = 2025\n46 x 46 = 2116\n47 x 47 = 2209\n48 x 48 = 2304\n49 x 49 = 2401\n\n\n\n\nShow code\nfrom matplotlib import pyplot as plt\nimport random\n\nxs = [i for i in range(1,101)]\n\nys = [i + (random.randrange(-35*i, 35*i)) * 0.01 for i in xs]\n\nplt.plot(xs, ys)"
+  },
+  {
+    "objectID": "notebooks/Plotly_test.html",
+    "href": "notebooks/Plotly_test.html",
+    "title": "Test Frontmatter",
+    "section": "",
+    "text": "Testing Interactive graphs\nHopefully a graph will be shown below.\n\n\nShow code\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\n\n# --- generate random test data ---\nnp.random.seed(42)\nregions = [\"North East\", \"North West\", \"London\", \"South West\", \"Scotland\", \"Wales\"]\nyears = list(range(2010, 2026))\n\nrows = []\nfor region in regions:\n    base = np.random.uniform(4, 9)          # starting affordability ratio\n    drift = np.random.uniform(0.05, 0.3)    # how fast it worsens over time\n    for year in years:\n        noise = np.random.normal(0, 0.15)\n        ratio = base + drift * (year - 2010) + noise\n        rows.append({\"year\": year, \"region\": region, \"ratio\": round(ratio, 2)})\n\ndf = pd.DataFrame(rows)\n\n# --- interactive plotly chart ---\nfig = px.line(\n    df,\n    x=\"year\",\n    y=\"ratio\",\n    color=\"region\",\n    markers=True,\n    title=\"House Price to Earnings Ratio by Region (test data)\",\n    labels={\"ratio\": \"Price-to-Earnings Ratio\", \"year\": \"Year\"},\n)\nfig.update_layout(hovermode=\"x unified\")\nfig"
+  },
+  {
     "objectID": "notebooks/Youth_Unemployment.html",
     "href": "notebooks/Youth_Unemployment.html",
     "title": "The state of Young Adult (18 - 24) Unemployment in the UK",
     "section": "",
     "text": "Executive Summary: * Are Young People working less? Yes. Since 2004, the employment rate for 18–24 year olds has dropped significantly, while the economic inactivity rate has surged from ~25% to over ~32%.\n\nWhat are they primarily doing with that time? -&gt; Education & Health-Related Inactivity.\n\nThe largest portion of young adults (18–24) who are not in employment are actually in full-time education. As of early 2026, ~25.5% of the entire 18–24 demographic are economically inactive students.\nHowever, there is a growing, structural crisis. The NEET (Not in Education, Employment, or Training) rate has risen to 15.8%. Crucially, the majority of these NEETs (9.4%) are economically inactive (not looking for work), largely driven by long-term mental and physical health conditions. Only 6.4% are actively seeking employment.\n\nWhat will this mean for us all? While higher education participation delays entry into the workforce (creating a short-term labor squeeze but potentially higher long-term productivity), the rising rate of inactive, unwell NEETs presents a severe economic threat. It risks long-term “wage scarring” for a generation of young adults and a shrinking tax base coupled with higher social safety net reliance for the broader UK economy."
-  },
-  {
-    "objectID": "notebooks/Youth_Unemployment.html#load-every-dataset-once",
-    "href": "notebooks/Youth_Unemployment.html#load-every-dataset-once",
-    "title": "The state of Young Adult (18 - 24) Unemployment in the UK",
-    "section": "Load every dataset once",
-    "text": "Load every dataset once\nEach sheet is parsed a single time here. df_people / df_men / df_women come from the A05 workbook; df_neet_people / df_neet_men / df_neet_women come from the NEET workbook. Every graph below reuses these six dataframes instead of re-reading the Excel files.\n\n\nShow code\n# A05 workbook: employment & inactivity rates\ndf_people = parse_a05_sheet(\"data/A05.xls\", \"People\")\ndf_men = parse_a05_sheet(\"data/A05.xls\", \"Men\")\ndf_women = parse_a05_sheet(\"data/A05.xls\", \"Women\")\n\n# NEET workbook: seasonally-adjusted NEET rates\ndf_neet_people = parse_neet_sheet(\"data/NEET.xlsx\", \"People - SA\")\ndf_neet_men = parse_neet_sheet(\"data/NEET.xlsx\", \"Men - SA\")\ndf_neet_women = parse_neet_sheet(\"data/NEET.xlsx\", \"Women - SA\")"
   },
   {
     "objectID": "notebooks/Youth_Unemployment.html#employment-and-inactivity-by-gender",
@@ -46,7 +53,7 @@
     "href": "notebooks/Youth_Unemployment.html#long-run-inactivity-trend",
     "title": "The state of Young Adult (18 - 24) Unemployment in the UK",
     "section": "Long-run inactivity trend",
-    "text": "Long-run inactivity trend\nZooming out, here’s the long-run economic inactivity rate for 18-24 year olds on its own, drawn with Matplotlib and saved to disk for reuse outside the notebook.\n\n\nShow code\ntarget_col = find_col(df_people, \"Aged 18-24\", \"Inactivity_rate\")\n\nplt.figure(figsize=(10, 6))\nplt.plot(df_people['Year_Fraction'], df_people[target_col], color='#d62728', linewidth=2.5)\nplt.title('Economic Inactivity Rate: 18-24 Year Olds (UK)', fontsize=14, pad=15)\nplt.xlabel('Year', fontsize=12)\nplt.ylabel('Inactivity Rate (%)', fontsize=12)\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\n\nplt.savefig('inactivity_1824.png')\nplt.show()"
+    "text": "Long-run inactivity trend\nZooming out, here’s the long-run economic inactivity rate for 18-24 year olds on its own.\n\n\nShow code\ntarget_col = find_col(df_people, \"Aged 18-24\", \"Inactivity_rate\")\n\nplt.figure(figsize=(10, 6))\nplt.plot(df_people['Year_Fraction'], df_people[target_col], color='#d62728', linewidth=2.5)\nplt.title('Economic Inactivity Rate: 18-24 Year Olds (UK)', fontsize=14, pad=15)\nplt.xlabel('Year', fontsize=12)\nplt.ylabel('Inactivity Rate (%)', fontsize=12)\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\n\nplt.savefig('inactivity_1824.png')\nplt.show()"
   },
   {
     "objectID": "notebooks/Youth_Unemployment.html#where-do-18-24-year-olds-stand-today",
@@ -61,19 +68,5 @@
     "title": "About",
     "section": "",
     "text": "I want to share my Notebooks here!\n\nTeddy"
-  },
-  {
-    "objectID": "notebooks/Plotly_test.html",
-    "href": "notebooks/Plotly_test.html",
-    "title": "Test Frontmatter",
-    "section": "",
-    "text": "Testing Interactive graphs\nHopefully a graph will be shown below.\n\n\nShow code\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\n\n# --- generate random test data ---\nnp.random.seed(42)\nregions = [\"North East\", \"North West\", \"London\", \"South West\", \"Scotland\", \"Wales\"]\nyears = list(range(2010, 2026))\n\nrows = []\nfor region in regions:\n    base = np.random.uniform(4, 9)          # starting affordability ratio\n    drift = np.random.uniform(0.05, 0.3)    # how fast it worsens over time\n    for year in years:\n        noise = np.random.normal(0, 0.15)\n        ratio = base + drift * (year - 2010) + noise\n        rows.append({\"year\": year, \"region\": region, \"ratio\": round(ratio, 2)})\n\ndf = pd.DataFrame(rows)\n\n# --- interactive plotly chart ---\nfig = px.line(\n    df,\n    x=\"year\",\n    y=\"ratio\",\n    color=\"region\",\n    markers=True,\n    title=\"House Price to Earnings Ratio by Region (test data)\",\n    labels={\"ratio\": \"Price-to-Earnings Ratio\", \"year\": \"Year\"},\n)\nfig.update_layout(hovermode=\"x unified\")\nfig"
-  },
-  {
-    "objectID": "notebooks/Jupyter playtest.html",
-    "href": "notebooks/Jupyter playtest.html",
-    "title": "My Notebook about a thing",
-    "section": "",
-    "text": "Here I’ll explain some stuff. I might even use Maths:\n\\(x \\times x = x^2\\)\n\n\nShow code\nfor i in range(50):\n    print(f\"{i} x {i} = {i**2}\")\n\n\n0 x 0 = 0\n1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n13 x 13 = 169\n14 x 14 = 196\n15 x 15 = 225\n16 x 16 = 256\n17 x 17 = 289\n18 x 18 = 324\n19 x 19 = 361\n20 x 20 = 400\n21 x 21 = 441\n22 x 22 = 484\n23 x 23 = 529\n24 x 24 = 576\n25 x 25 = 625\n26 x 26 = 676\n27 x 27 = 729\n28 x 28 = 784\n29 x 29 = 841\n30 x 30 = 900\n31 x 31 = 961\n32 x 32 = 1024\n33 x 33 = 1089\n34 x 34 = 1156\n35 x 35 = 1225\n36 x 36 = 1296\n37 x 37 = 1369\n38 x 38 = 1444\n39 x 39 = 1521\n40 x 40 = 1600\n41 x 41 = 1681\n42 x 42 = 1764\n43 x 43 = 1849\n44 x 44 = 1936\n45 x 45 = 2025\n46 x 46 = 2116\n47 x 47 = 2209\n48 x 48 = 2304\n49 x 49 = 2401\n\n\n\n\nShow code\nfrom matplotlib import pyplot as plt\nimport random\n\nxs = [i for i in range(1,101)]\n\nys = [i + (random.randrange(-35*i, 35*i)) * 0.01 for i in xs]\n\nplt.plot(xs, ys)"
   }
 ]
