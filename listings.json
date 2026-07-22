@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/notebooks/Plotly_test.html",
+      "/notebooks/Youth_Unemployment.html",
       "/notebooks/Jupyter playtest.html"
     ]
   }
