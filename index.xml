@@ -10,7 +10,7 @@
 <atom:link href="https://notebooks.yourdomain.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A collection of data analysis and data science projects</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Wed, 22 Jul 2026 13:27:59 GMT</lastBuildDate>
+<lastBuildDate>Wed, 22 Jul 2026 13:36:54 GMT</lastBuildDate>
 <item>
   <title>Test Frontmatter</title>
   <link>https://notebooks.yourdomain.com/notebooks/Plotly_test.html</link>
@@ -21,94 +21,34 @@
 
 
 <section id="testing-interactive-graphs" class="level1">
-
-<div id="dc6ed453-8316-4ae3-ab10-a3c559c242f6" class="cell" data-execution_count="2">
+<h1>Testing Interactive graphs</h1>
+<p>Hopefully a graph will be shown below.</p>
+<div id="c4989c1e" class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">import</span> sys</span>
-<span id="cb1-2"><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span>{sys.executable} <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>m pip install pandas numpy plotly </span></code></pre></div></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-yellow-fg">WARNING: Cache entry deserialization failed, entry ignored</span><span class="ansi-yellow-fg">
-
-</span>Collecting pandas
-
-  Using cached pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
-
-Requirement already satisfied: numpy in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (2.5.1)
-
-<span class="ansi-yellow-fg">WARNING: Cache entry deserialization failed, entry ignored</span><span class="ansi-yellow-fg">
-
-</span>Collecting plotly
-
-  Using cached plotly-6.9.0-py3-none-any.whl.metadata (9.0 kB)
-
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (from pandas) (2.9.0.post0)
-
-<span class="ansi-yellow-fg">WARNING: Cache entry deserialization failed, entry ignored</span><span class="ansi-yellow-fg">
-
-</span>Collecting narwhals&gt;=1.15.1 (from plotly)
-
-  Using cached narwhals-2.24.0-py3-none-any.whl.metadata (15 kB)
-
-Requirement already satisfied: packaging in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (from plotly) (26.2)
-
-Requirement already satisfied: six&gt;=1.5 in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
-
-Using cached pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
-
-Using cached plotly-6.9.0-py3-none-any.whl (9.9 MB)
-
-Using cached narwhals-2.24.0-py3-none-any.whl (461 kB)
-
-Installing collected packages: narwhals, plotly, pandas
-
-   <span style="color:rgb(114,156,31)">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">3/3</span> [pandas]━━━━━━━━━━━ <span class="ansi-green-fg">2/3</span> [pandas]
-
-Successfully installed narwhals-2.24.0 pandas-3.0.3 plotly-6.9.0
-
-
-
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">26.1.1</span> -&gt; <span class="ansi-green-fg">26.1.2</span>
-
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">python3.14 -m pip install --upgrade pip</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="c4989c1e" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
 font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> pd</span>
-<span id="cb2-2"><span class="im" style="color: #00769E;
+<span id="cb1-2"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> np</span>
-<span id="cb2-3"><span class="im" style="color: #00769E;
+<span id="cb1-3"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> plotly.express <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> px</span>
-<span id="cb2-4"></span>
-<span id="cb2-5"><span class="co" style="color: #5E5E5E;
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># --- generate random test data ---</span></span>
-<span id="cb2-6">np.random.seed(<span class="dv" style="color: #AD0000;
+<span id="cb1-6">np.random.seed(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">42</span>)</span>
-<span id="cb2-7">regions <span class="op" style="color: #5E5E5E;
+<span id="cb1-7">regions <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -123,7 +63,7 @@ background-color: null;
 font-style: inherit;">"Scotland"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Wales"</span>]</span>
-<span id="cb2-8">years <span class="op" style="color: #5E5E5E;
+<span id="cb1-8">years <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -134,18 +74,18 @@ background-color: null;
 font-style: inherit;">2010</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2026</span>))</span>
-<span id="cb2-9"></span>
-<span id="cb2-10">rows <span class="op" style="color: #5E5E5E;
+<span id="cb1-9"></span>
+<span id="cb1-10">rows <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> []</span>
-<span id="cb2-11"><span class="cf" style="color: #003B4F;
+<span id="cb1-11"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">for</span> region <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> regions:</span>
-<span id="cb2-12">    base <span class="op" style="color: #5E5E5E;
+<span id="cb1-12">    base <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.random.uniform(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -154,7 +94,7 @@ background-color: null;
 font-style: inherit;">9</span>)          <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># starting affordability ratio</span></span>
-<span id="cb2-13">    drift <span class="op" style="color: #5E5E5E;
+<span id="cb1-13">    drift <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.random.uniform(<span class="fl" style="color: #AD0000;
 background-color: null;
@@ -163,21 +103,21 @@ background-color: null;
 font-style: inherit;">0.3</span>)    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># how fast it worsens over time</span></span>
-<span id="cb2-14">    <span class="cf" style="color: #003B4F;
+<span id="cb1-14">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">for</span> year <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> years:</span>
-<span id="cb2-15">        noise <span class="op" style="color: #5E5E5E;
+<span id="cb1-15">        noise <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.15</span>)</span>
-<span id="cb2-16">        ratio <span class="op" style="color: #5E5E5E;
+<span id="cb1-16">        ratio <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -190,7 +130,7 @@ background-color: null;
 font-style: inherit;">2010</span>) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> noise</span>
-<span id="cb2-17">        rows.append({<span class="st" style="color: #20794D;
+<span id="cb1-17">        rows.append({<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"year"</span>: year, <span class="st" style="color: #20794D;
 background-color: null;
@@ -201,44 +141,44 @@ background-color: null;
 font-style: inherit;">round</span>(ratio, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>)})</span>
-<span id="cb2-18"></span>
-<span id="cb2-19">df <span class="op" style="color: #5E5E5E;
+<span id="cb1-18"></span>
+<span id="cb1-19">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.DataFrame(rows)</span>
-<span id="cb2-20"></span>
-<span id="cb2-21"><span class="co" style="color: #5E5E5E;
+<span id="cb1-20"></span>
+<span id="cb1-21"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># --- interactive plotly chart ---</span></span>
-<span id="cb2-22">fig <span class="op" style="color: #5E5E5E;
+<span id="cb1-22">fig <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> px.line(</span>
-<span id="cb2-23">    df,</span>
-<span id="cb2-24">    x<span class="op" style="color: #5E5E5E;
+<span id="cb1-23">    df,</span>
+<span id="cb1-24">    x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"year"</span>,</span>
-<span id="cb2-25">    y<span class="op" style="color: #5E5E5E;
+<span id="cb1-25">    y<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"ratio"</span>,</span>
-<span id="cb2-26">    color<span class="op" style="color: #5E5E5E;
+<span id="cb1-26">    color<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"region"</span>,</span>
-<span id="cb2-27">    markers<span class="op" style="color: #5E5E5E;
+<span id="cb1-27">    markers<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>,</span>
-<span id="cb2-28">    title<span class="op" style="color: #5E5E5E;
+<span id="cb1-28">    title<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"House Price to Earnings Ratio by Region (test data)"</span>,</span>
-<span id="cb2-29">    labels<span class="op" style="color: #5E5E5E;
+<span id="cb1-29">    labels<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
 background-color: null;
@@ -249,13 +189,13 @@ background-color: null;
 font-style: inherit;">"year"</span>: <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Year"</span>},</span>
-<span id="cb2-30">)</span>
-<span id="cb2-31">fig.update_layout(hovermode<span class="op" style="color: #5E5E5E;
+<span id="cb1-30">)</span>
+<span id="cb1-31">fig.update_layout(hovermode<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"x unified"</span>)</span>
-<span id="cb2-32">fig.show()</span></code></pre></div></div>
+<span id="cb1-32">fig</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
@@ -267,10 +207,10 @@ font-style: inherit;">"x unified"</span>)</span>
 
  ]]></description>
   <guid>https://notebooks.yourdomain.com/notebooks/Plotly_test.html</guid>
-  <pubDate>Wed, 22 Jul 2026 13:27:59 GMT</pubDate>
+  <pubDate>Wed, 22 Jul 2026 13:36:54 GMT</pubDate>
 </item>
 <item>
-  <title>Test Frontmatter</title>
+  <title>My Notebook about a thing</title>
   <link>https://notebooks.yourdomain.com/notebooks/Jupyter playtest.html</link>
   <description><![CDATA[ 
 
@@ -278,8 +218,6 @@ font-style: inherit;">"x unified"</span>)</span>
 
 
 
-<section id="my-notebook-about-a-thing" class="level3">
-<h3 class="anchored" data-anchor-id="my-notebook-about-a-thing">My Notebook about a thing</h3>
 <p>Here I’ll explain some stuff. I might even use <strong>Maths</strong>:</p>
 <p><img src="https://latex.codecogs.com/png.latex?x%20%5Ctimes%20x%20=%20x%5E2"></p>
 <div id="5a0a817b-dd94-43d1-9722-6c26f23aaa20" class="cell" data-execution_count="1">
@@ -445,11 +383,10 @@ font-style: inherit;">in</span> xs]</span>
 </div>
 
 
-</section>
 
  ]]></description>
   <guid>https://notebooks.yourdomain.com/notebooks/Jupyter playtest.html</guid>
-  <pubDate>Wed, 22 Jul 2026 13:27:59 GMT</pubDate>
+  <pubDate>Wed, 22 Jul 2026 13:36:54 GMT</pubDate>
 </item>
 </channel>
 </rss>

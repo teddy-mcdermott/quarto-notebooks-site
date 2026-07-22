@@ -359,96 +359,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="testing-interactive-graphs" class="level1">
 <h1>Testing Interactive graphs</h1>
-<div id="dc6ed453-8316-4ae3-ab10-a3c559c242f6" class="cell" data-execution_count="2">
+<p>Hopefully a graph will be shown below.</p>
+<div id="c4989c1e" class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>{sys.executable} <span class="op">-</span>m pip install pandas numpy plotly </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-yellow-fg">WARNING: Cache entry deserialization failed, entry ignored</span><span class="ansi-yellow-fg">
-
-</span>Collecting pandas
-
-  Using cached pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
-
-Requirement already satisfied: numpy in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (2.5.1)
-
-<span class="ansi-yellow-fg">WARNING: Cache entry deserialization failed, entry ignored</span><span class="ansi-yellow-fg">
-
-</span>Collecting plotly
-
-  Using cached plotly-6.9.0-py3-none-any.whl.metadata (9.0 kB)
-
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (from pandas) (2.9.0.post0)
-
-<span class="ansi-yellow-fg">WARNING: Cache entry deserialization failed, entry ignored</span><span class="ansi-yellow-fg">
-
-</span>Collecting narwhals&gt;=1.15.1 (from plotly)
-
-  Using cached narwhals-2.24.0-py3-none-any.whl.metadata (15 kB)
-
-Requirement already satisfied: packaging in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (from plotly) (26.2)
-
-Requirement already satisfied: six&gt;=1.5 in /home/teddy/.local/share/mise/installs/python/3.14.4/lib/python3.14/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
-
-Using cached pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
-
-Using cached plotly-6.9.0-py3-none-any.whl (9.9 MB)
-
-Using cached narwhals-2.24.0-py3-none-any.whl (461 kB)
-
-Installing collected packages: narwhals, plotly, pandas
-
-   <span style="color:rgb(114,156,31)">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">3/3</span> [pandas]━━━━━━━━━━━ <span class="ansi-green-fg">2/3</span> [pandas]
-
-Successfully installed narwhals-2.24.0 pandas-3.0.3 plotly-6.9.0
-
-
-
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">26.1.1</span> -&gt; <span class="ansi-green-fg">26.1.2</span>
-
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">python3.14 -m pip install --upgrade pip</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="c4989c1e" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># --- generate random test data ---</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>regions <span class="op">=</span> [<span class="st">"North East"</span>, <span class="st">"North West"</span>, <span class="st">"London"</span>, <span class="st">"South West"</span>, <span class="st">"Scotland"</span>, <span class="st">"Wales"</span>]</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">2010</span>, <span class="dv">2026</span>))</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region <span class="kw">in</span> regions:</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    base <span class="op">=</span> np.random.uniform(<span class="dv">4</span>, <span class="dv">9</span>)          <span class="co"># starting affordability ratio</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    drift <span class="op">=</span> np.random.uniform(<span class="fl">0.05</span>, <span class="fl">0.3</span>)    <span class="co"># how fast it worsens over time</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> year <span class="kw">in</span> years:</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        noise <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="fl">0.15</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        ratio <span class="op">=</span> base <span class="op">+</span> drift <span class="op">*</span> (year <span class="op">-</span> <span class="dv">2010</span>) <span class="op">+</span> noise</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        rows.append({<span class="st">"year"</span>: year, <span class="st">"region"</span>: region, <span class="st">"ratio"</span>: <span class="bu">round</span>(ratio, <span class="dv">2</span>)})</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(rows)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># --- interactive plotly chart ---</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    df,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"year"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"ratio"</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"region"</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    markers<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"House Price to Earnings Ratio by Region (test data)"</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">"ratio"</span>: <span class="st">"Price-to-Earnings Ratio"</span>, <span class="st">"year"</span>: <span class="st">"Year"</span>},</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>fig.update_layout(hovermode<span class="op">=</span><span class="st">"x unified"</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># --- generate random test data ---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>regions <span class="op">=</span> [<span class="st">"North East"</span>, <span class="st">"North West"</span>, <span class="st">"London"</span>, <span class="st">"South West"</span>, <span class="st">"Scotland"</span>, <span class="st">"Wales"</span>]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">2010</span>, <span class="dv">2026</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region <span class="kw">in</span> regions:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    base <span class="op">=</span> np.random.uniform(<span class="dv">4</span>, <span class="dv">9</span>)          <span class="co"># starting affordability ratio</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    drift <span class="op">=</span> np.random.uniform(<span class="fl">0.05</span>, <span class="fl">0.3</span>)    <span class="co"># how fast it worsens over time</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> year <span class="kw">in</span> years:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        noise <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="fl">0.15</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        ratio <span class="op">=</span> base <span class="op">+</span> drift <span class="op">*</span> (year <span class="op">-</span> <span class="dv">2010</span>) <span class="op">+</span> noise</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        rows.append({<span class="st">"year"</span>: year, <span class="st">"region"</span>: region, <span class="st">"ratio"</span>: <span class="bu">round</span>(ratio, <span class="dv">2</span>)})</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># --- interactive plotly chart ---</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    df,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"year"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"ratio"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"region"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    markers<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"House Price to Earnings Ratio by Region (test data)"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">"ratio"</span>: <span class="st">"Price-to-Earnings Ratio"</span>, <span class="st">"year"</span>: <span class="st">"Year"</span>},</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>fig.update_layout(hovermode<span class="op">=</span><span class="st">"x unified"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>fig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
