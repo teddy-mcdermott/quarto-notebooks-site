@@ -11,13 +11,20 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "I want to share my Notebooks here!\n\nTeddy"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Data Science Portfolio",
     "section": "",
-    "text": "Welcome — this is a collection of data analysis and data science projects, built as Jupyter notebooks and published straight from the source code. Click any project below to see the full analysis, including code, charts, and conclusions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy Notebook about a thing\n\n1 min\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome — this is a collection of data analysis and data science projects, built as Jupyter notebooks and published straight from the source code. Click any project below to see the full analysis, including code, charts, and conclusions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy Notebook about a thing\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nTest Frontmatter\n\n1 min\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notebooks/Plotly_test.html",
+    "href": "notebooks/Plotly_test.html",
+    "title": "Test Frontmatter",
+    "section": "",
+    "text": "Testing Interactive graphs\nHopefully a graph will be shown below.\n\n\nShow code\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\n\n# --- generate random test data ---\nnp.random.seed(42)\nregions = [\"North East\", \"North West\", \"London\", \"South West\", \"Scotland\", \"Wales\"]\nyears = list(range(2010, 2026))\n\nrows = []\nfor region in regions:\n    base = np.random.uniform(4, 9)          # starting affordability ratio\n    drift = np.random.uniform(0.05, 0.3)    # how fast it worsens over time\n    for year in years:\n        noise = np.random.normal(0, 0.15)\n        ratio = base + drift * (year - 2010) + noise\n        rows.append({\"year\": year, \"region\": region, \"ratio\": round(ratio, 2)})\n\ndf = pd.DataFrame(rows)\n\n# --- interactive plotly chart ---\nfig = px.line(\n    df,\n    x=\"year\",\n    y=\"ratio\",\n    color=\"region\",\n    markers=True,\n    title=\"House Price to Earnings Ratio by Region (test data)\",\n    labels={\"ratio\": \"Price-to-Earnings Ratio\", \"year\": \"Year\"},\n)\nfig.update_layout(hovermode=\"x unified\")\nfig\n\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json"
   }
 ]

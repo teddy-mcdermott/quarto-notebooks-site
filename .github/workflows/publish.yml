@@ -21,9 +21,8 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Jupyter + libaries
-        run: |
-          pip install jupyter matplotlib pandas numpy plotly
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
