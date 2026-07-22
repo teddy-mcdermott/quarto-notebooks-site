@@ -3,8 +3,8 @@ project:
   output-dir: _site
 
 website:
-  title: "Your Name — Data Science Notebooks"
-  description: "A collection of data analysis and data science projects"
+  title: "Teddy McDermott — Data Science Notebooks"
+  description: "A collection of data analysis and data science projects."
   site-url: "https://notebooks.yourdomain.com"
   navbar:
     left:
@@ -21,8 +21,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo        # try flatly, litera, or minty for other light looks
-      dark: darkly        # try cyborg, slate, or solar for other dark looks
+      light: flatly        # try flatly, litera, or minty for other light looks
+      dark: slate        # try cyborg, slate, or solar for other dark looks
     css: styles.css
     toc: true
     code-fold: true       # code hidden by default per notebook
