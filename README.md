@@ -1,2 +1,2 @@
 # quarto-notebooks-site
-All my jupyter notebooks will be published [here](notebooks.teddymcdermott.co.uk).
+All my jupyter notebooks will be published [[here]](notebooks.teddymcdermott.co.uk).
