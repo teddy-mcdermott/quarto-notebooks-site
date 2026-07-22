@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Jupyter + libaries
         run: |
-          pip install jupyter matplotlib
+          pip install jupyter matplotlib pandas numpy plotly
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

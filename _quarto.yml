@@ -29,6 +29,7 @@ format:
     code-tools: true      # adds "show all code" toggle at top of page
     code-summary: "Show code"
     fig-cap-location: bottom
+    fig-format: retina
     grid:
       body-width: 900px
 
