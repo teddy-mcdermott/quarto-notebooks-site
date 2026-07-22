@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/notebooks/Plotly_test.html",
       "/notebooks/Jupyter playtest.html"
     ]
   }
